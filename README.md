@@ -1,7 +1,7 @@
 # fast-decimal 
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/xenking/fast-decimal)](https://pkg.go.dev/github.com/xenking/fast-decimal)
-[![Go Report Card](https://goreportcard.com/badge/github.com/xenking/fast-decimal)](https://goreportcard.com/report/github.com/xenking/fast-decimal)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/xenking/fast-decimal/v3)](https://pkg.go.dev/github.com/xenking/fast-decimal/v3)
+[![Go Report Card](https://goreportcard.com/badge/github.com/xenking/fast-decimal/v3)](https://goreportcard.com/report/github.com/xenking/fast-decimal/v3)
 [![Build Status](https://travis-ci.com/xenking/fast-decimal.svg?branch=master)](https://travis-ci.com/xenking/fast-decimal)
 [![codecov](https://codecov.io/gh/xenking/fast-decimal/branch/master/graph/badge.svg)](https://codecov.io/gh/xenking/fast-decimal)
 
@@ -36,7 +36,7 @@ the [General Decimal Arithmetic](http://speleotrove.com/decimal/) specification.
 
 ## Documentation
 
-[GoDoc](http://godoc.org/github.com/xenking/fast-decimal)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/xenking/fast-decimal/v3)](https://pkg.go.dev/github.com/xenking/fast-decimal/v3)
 
 ## Versioning
 
