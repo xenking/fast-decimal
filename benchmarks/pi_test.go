@@ -6,8 +6,8 @@ import (
 
 	"github.com/apmckinlay/gsuneido/util/dnum"
 	"github.com/cockroachdb/apd"
-	"github.com/ericlagergren/decimal"
-	ssdec "github.com/shopspring/decimal"
+	ssdec "github.com/xenking/decimal"
+	decimal "github.com/xenking/fast-decimal/v3"
 	"gopkg.in/inf.v0"
 )
 

@@ -5,8 +5,8 @@ import (
 
 	"github.com/apmckinlay/gsuneido/util/dnum"
 	"github.com/cockroachdb/apd"
-	"github.com/ericlagergren/decimal"
-	ssdec "github.com/shopspring/decimal"
+	ssdec "github.com/xenking/decimal"
+	decimal "github.com/xenking/fast-decimal/v3"
 	"gopkg.in/inf.v0"
 )
 
@@ -53,7 +53,7 @@ var (
 )
 
 // PiShopSpring calculates π to the desired precision using
-// github.com/shopspring/decimal.
+// github.com/xenking/decimal.
 func PiShopSpring(prec int32) ssdec.Decimal {
 	var (
 		lasts = ssdec.New(0, 0)
@@ -143,7 +143,7 @@ var (
 )
 
 // PiDecimal_Go calculates π to the desired precision using
-// github.com/ericlagergren/decimal with the operating mode set to Go.
+// github.com/xenking/fast-decimal/v3 with the operating mode set to Go.
 func PiDecimal_Go(prec int) *decimal.Big {
 	var (
 		ctx = decimal.Context{
@@ -177,7 +177,7 @@ func PiDecimal_Go(prec int) *decimal.Big {
 }
 
 // PiDecimal_GDA calculates π to the desired precision using
-// github.com/ericlagergren/decimal with the operating mode set to GDA.
+// github.com/xenking/fast-decimal/v3 with the operating mode set to GDA.
 func PiDecimal_GDA(prec int) *decimal.Big {
 	var (
 		ctx = decimal.Context{

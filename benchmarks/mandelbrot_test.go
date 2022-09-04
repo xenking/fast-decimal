@@ -3,7 +3,7 @@ package benchmarks
 import (
 	"testing"
 
-	"github.com/ericlagergren/decimal"
+	decimal "github.com/xenking/fast-decimal/v3"
 )
 
 const mbrotiters = 10000000
