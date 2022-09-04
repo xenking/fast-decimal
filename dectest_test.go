@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ericlagergren/decimal/dectest"
+	"github.com/xenking/fast-decimal/v3/dectest"
 )
 
 // TestDecTests runs the dectest test suite.

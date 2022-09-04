@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	. "github.com/ericlagergren/decimal"
+	. "github.com/xenking/fast-decimal/v3"
 )
 
 type Scanner struct {
@@ -64,19 +64,19 @@ func (s *Scanner) parse(data []byte) (err error) {
 		cond Condition
 	)
 
-//line scanner.go:70
+	//line scanner.go:70
 	const parser_start int = 1
 	const parser_first_final int = 412
 	const parser_error int = 0
 
 	const parser_en_main int = 1
 
-//line scanner.go:78
+	//line scanner.go:78
 	{
 		cs = parser_start
 	}
 
-//line scanner.go:83
+	//line scanner.go:83
 	{
 		if p == pe {
 			goto _test_eof
@@ -967,7 +967,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		cs = 0
 		goto _out
 	tr0:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st2
 	st2:
@@ -975,7 +975,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof2
 		}
 	st_case_2:
-//line scanner.go:982
+		//line scanner.go:982
 		switch {
 		case data[p] > 90:
 			if 97 <= data[p] && data[p] <= 122 {
@@ -1053,7 +1053,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr11:
-//line scanner.rl:71
+		//line scanner.rl:71
 
 		s.c = &Case{ID: string(data[mark:p])}
 
@@ -1063,7 +1063,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof8
 		}
 	st_case_8:
-//line scanner.go:1070
+		//line scanner.go:1070
 		switch data[p] {
 		case 32:
 			goto st8
@@ -1137,7 +1137,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr13:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st9
 	st9:
@@ -1145,7 +1145,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof9
 		}
 	st_case_9:
-//line scanner.go:1152
+		//line scanner.go:1152
 		switch data[p] {
 		case 66:
 			goto st10
@@ -1190,7 +1190,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr33:
-//line scanner.rl:81
+		//line scanner.rl:81
 
 		if s.c.Op, ok = operations[strings.ToLower(string(data[mark:p]))]; !ok {
 			return fmt.Errorf("dectest: invalid op: %q", data[mark:p])
@@ -1202,7 +1202,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof12
 		}
 	st_case_12:
-//line scanner.go:1209
+		//line scanner.go:1209
 		switch data[p] {
 		case 32:
 			goto st12
@@ -1284,7 +1284,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr36:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st14
 	st14:
@@ -1292,7 +1292,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof14
 		}
 	st_case_14:
-//line scanner.go:1299
+		//line scanner.go:1299
 		switch data[p] {
 		case 32:
 			goto tr43
@@ -1306,7 +1306,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr43:
-//line scanner.rl:114
+		//line scanner.rl:114
 		s.c.Inputs = append(s.c.Inputs, Data(data[mark:p]))
 		goto st15
 	st15:
@@ -1314,7 +1314,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof15
 		}
 	st_case_15:
-//line scanner.go:1321
+		//line scanner.go:1321
 		switch data[p] {
 		case 32:
 			goto st15
@@ -1359,7 +1359,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr37:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st16
 	st16:
@@ -1367,7 +1367,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof16
 		}
 	st_case_16:
-//line scanner.go:1374
+		//line scanner.go:1374
 		switch data[p] {
 		case 46:
 			goto st17
@@ -1395,7 +1395,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr38:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st17
 	st17:
@@ -1403,7 +1403,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof17
 		}
 	st_case_17:
-//line scanner.go:1410
+		//line scanner.go:1410
 		if 48 <= data[p] && data[p] <= 57 {
 			goto st18
 		}
@@ -1439,7 +1439,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr44:
-//line scanner.rl:114
+		//line scanner.rl:114
 		s.c.Inputs = append(s.c.Inputs, Data(data[mark:p]))
 		goto st19
 	st19:
@@ -1447,7 +1447,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof19
 		}
 	st_case_19:
-//line scanner.go:1454
+		//line scanner.go:1454
 		if data[p] == 32 {
 			goto st15
 		}
@@ -1502,7 +1502,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr39:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st23
 	st23:
@@ -1510,7 +1510,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof23
 		}
 	st_case_23:
-//line scanner.go:1517
+		//line scanner.go:1517
 		switch data[p] {
 		case 32:
 			goto tr43
@@ -1539,7 +1539,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr40:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st24
 	st24:
@@ -1547,7 +1547,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof24
 		}
 	st_case_24:
-//line scanner.go:1554
+		//line scanner.go:1554
 		switch data[p] {
 		case 78:
 			goto st25
@@ -1637,7 +1637,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr41:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st31
 	st31:
@@ -1645,7 +1645,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof31
 		}
 	st_case_31:
-//line scanner.go:1652
+		//line scanner.go:1652
 		switch data[p] {
 		case 65:
 			goto st32
@@ -1666,7 +1666,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr42:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st33
 	st33:
@@ -1674,7 +1674,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof33
 		}
 	st_case_33:
-//line scanner.go:1681
+		//line scanner.go:1681
 		switch data[p] {
 		case 78:
 			goto st31
@@ -1683,7 +1683,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr46:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st34
 	st34:
@@ -1691,7 +1691,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof34
 		}
 	st_case_34:
-//line scanner.go:1698
+		//line scanner.go:1698
 		switch data[p] {
 		case 46:
 			goto st17
@@ -1822,7 +1822,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr67:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st412
 	st412:
@@ -1830,7 +1830,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof412
 		}
 	st_case_412:
-//line scanner.go:1837
+		//line scanner.go:1837
 		switch data[p] {
 		case 32:
 			goto tr443
@@ -1844,11 +1844,11 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr443:
-//line scanner.rl:115
+		//line scanner.rl:115
 		s.c.Output = Data(data[mark:p])
 		goto st38
 	tr445:
-//line scanner.rl:116
+		//line scanner.rl:116
 
 		cond, ok = conditions[strings.ToLower(string(data[mark:p]))]
 		if !ok {
@@ -1862,7 +1862,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof38
 		}
 	st_case_38:
-//line scanner.go:1869
+		//line scanner.go:1869
 		switch data[p] {
 		case 32:
 			goto st38
@@ -1904,7 +1904,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr78:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st39
 	st39:
@@ -1912,7 +1912,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof39
 		}
 	st_case_39:
-//line scanner.go:1919
+		//line scanner.go:1919
 		switch data[p] {
 		case 76:
 			goto st40
@@ -2174,7 +2174,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr79:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st60
 	st60:
@@ -2182,7 +2182,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof60
 		}
 	st_case_60:
-//line scanner.go:2189
+		//line scanner.go:2189
 		switch data[p] {
 		case 73:
 			goto st61
@@ -2541,7 +2541,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr80:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st90
 	st90:
@@ -2549,7 +2549,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof90
 		}
 	st_case_90:
-//line scanner.go:2556
+		//line scanner.go:2556
 		switch data[p] {
 		case 78:
 			goto st91
@@ -3044,7 +3044,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr81:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st131
 	st131:
@@ -3052,7 +3052,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof131
 		}
 	st_case_131:
-//line scanner.go:3059
+		//line scanner.go:3059
 		switch data[p] {
 		case 79:
 			goto st132
@@ -3166,7 +3166,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr82:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st141
 	st141:
@@ -3174,7 +3174,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof141
 		}
 	st_case_141:
-//line scanner.go:3181
+		//line scanner.go:3181
 		switch data[p] {
 		case 86:
 			goto st142
@@ -3255,7 +3255,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr83:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st148
 	st148:
@@ -3263,7 +3263,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof148
 		}
 	st_case_148:
-//line scanner.go:3270
+		//line scanner.go:3270
 		switch data[p] {
 		case 79:
 			goto st149
@@ -3308,7 +3308,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr84:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st152
 	st152:
@@ -3316,7 +3316,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof152
 		}
 	st_case_152:
-//line scanner.go:3323
+		//line scanner.go:3323
 		switch data[p] {
 		case 85:
 			goto st153
@@ -3409,7 +3409,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr85:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st160
 	st160:
@@ -3417,7 +3417,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof160
 		}
 	st_case_160:
-//line scanner.go:3424
+		//line scanner.go:3424
 		switch data[p] {
 		case 78:
 			goto st161
@@ -3438,7 +3438,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr444:
-//line scanner.rl:115
+		//line scanner.rl:115
 		s.c.Output = Data(data[mark:p])
 		goto st414
 	st414:
@@ -3446,7 +3446,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof414
 		}
 	st_case_414:
-//line scanner.go:3453
+		//line scanner.go:3453
 		if data[p] == 32 {
 			goto st38
 		}
@@ -3455,7 +3455,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr68:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st162
 	st162:
@@ -3463,7 +3463,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof162
 		}
 	st_case_162:
-//line scanner.go:3470
+		//line scanner.go:3470
 		switch data[p] {
 		case 46:
 			goto st163
@@ -3493,7 +3493,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr69:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st163
 	st163:
@@ -3501,7 +3501,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof163
 		}
 	st_case_163:
-//line scanner.go:3508
+		//line scanner.go:3508
 		if 48 <= data[p] && data[p] <= 57 {
 			goto st415
 		}
@@ -3583,7 +3583,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr70:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st417
 	st417:
@@ -3591,7 +3591,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof417
 		}
 	st_case_417:
-//line scanner.go:3598
+		//line scanner.go:3598
 		switch data[p] {
 		case 32:
 			goto tr443
@@ -3620,7 +3620,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr71:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st166
 	st166:
@@ -3628,7 +3628,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof166
 		}
 	st_case_166:
-//line scanner.go:3635
+		//line scanner.go:3635
 		switch data[p] {
 		case 78:
 			goto st167
@@ -3718,7 +3718,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr72:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st172
 	st172:
@@ -3726,7 +3726,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof172
 		}
 	st_case_172:
-//line scanner.go:3733
+		//line scanner.go:3733
 		switch data[p] {
 		case 65:
 			goto st173
@@ -3785,7 +3785,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr73:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st178
 	st178:
@@ -3793,7 +3793,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof178
 		}
 	st_case_178:
-//line scanner.go:3800
+		//line scanner.go:3800
 		switch data[p] {
 		case 78:
 			goto st179
@@ -3802,7 +3802,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr76:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st179
 	st179:
@@ -3810,7 +3810,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof179
 		}
 	st_case_179:
-//line scanner.go:3817
+		//line scanner.go:3817
 		switch data[p] {
 		case 65:
 			goto st173
@@ -3819,7 +3819,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr74:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st180
 	st180:
@@ -3827,7 +3827,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof180
 		}
 	st_case_180:
-//line scanner.go:3834
+		//line scanner.go:3834
 		switch data[p] {
 		case 78:
 			goto st179
@@ -3865,7 +3865,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr75:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st184
 	st184:
@@ -3873,7 +3873,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof184
 		}
 	st_case_184:
-//line scanner.go:3880
+		//line scanner.go:3880
 		if data[p] == 101 {
 			goto st185
 		}
@@ -3945,7 +3945,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr14:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st191
 	st191:
@@ -3953,7 +3953,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof191
 		}
 	st_case_191:
-//line scanner.go:3960
+		//line scanner.go:3960
 		switch data[p] {
 		case 65:
 			goto st192
@@ -4384,7 +4384,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr15:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st224
 	st224:
@@ -4392,7 +4392,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof224
 		}
 	st_case_224:
-//line scanner.go:4399
+		//line scanner.go:4399
 		switch data[p] {
 		case 73:
 			goto st225
@@ -4490,7 +4490,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr16:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st232
 	st232:
@@ -4498,7 +4498,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof232
 		}
 	st_case_232:
-//line scanner.go:4505
+		//line scanner.go:4505
 		switch data[p] {
 		case 88:
 			goto st233
@@ -4519,7 +4519,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr17:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st234
 	st234:
@@ -4527,7 +4527,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof234
 		}
 	st_case_234:
-//line scanner.go:4534
+		//line scanner.go:4534
 		switch data[p] {
 		case 77:
 			goto st235
@@ -4548,7 +4548,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr18:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st236
 	st236:
@@ -4556,7 +4556,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof236
 		}
 	st_case_236:
-//line scanner.go:4563
+		//line scanner.go:4563
 		switch data[p] {
 		case 78:
 			goto st237
@@ -4601,7 +4601,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr19:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st240
 	st240:
@@ -4609,7 +4609,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof240
 		}
 	st_case_240:
-//line scanner.go:4616
+		//line scanner.go:4616
 		switch data[p] {
 		case 78:
 			goto st11
@@ -4657,7 +4657,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr20:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st244
 	st244:
@@ -4665,7 +4665,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof244
 		}
 	st_case_244:
-//line scanner.go:4672
+		//line scanner.go:4672
 		switch data[p] {
 		case 65:
 			goto st245
@@ -4780,7 +4780,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr21:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st252
 	st252:
@@ -4788,7 +4788,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof252
 		}
 	st_case_252:
-//line scanner.go:4795
+		//line scanner.go:4795
 		switch data[p] {
 		case 69:
 			goto st253
@@ -4937,7 +4937,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr22:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st264
 	st264:
@@ -4945,7 +4945,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof264
 		}
 	st_case_264:
-//line scanner.go:4952
+		//line scanner.go:4952
 		switch data[p] {
 		case 82:
 			goto st11
@@ -4954,7 +4954,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr23:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st265
 	st265:
@@ -4962,7 +4962,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof265
 		}
 	st_case_265:
-//line scanner.go:4969
+		//line scanner.go:4969
 		switch data[p] {
 		case 76:
 			goto st258
@@ -4999,7 +4999,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr24:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st268
 	st268:
@@ -5007,7 +5007,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof268
 		}
 	st_case_268:
-//line scanner.go:5014
+		//line scanner.go:5014
 		switch data[p] {
 		case 85:
 			goto st269
@@ -5076,7 +5076,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr25:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st274
 	st274:
@@ -5084,7 +5084,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof274
 		}
 	st_case_274:
-//line scanner.go:5091
+		//line scanner.go:5091
 		switch data[p] {
 		case 69:
 			goto st275
@@ -5302,7 +5302,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr26:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st291
 	st291:
@@ -5310,7 +5310,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof291
 		}
 	st_case_291:
-//line scanner.go:5317
+		//line scanner.go:5317
 		switch data[p] {
 		case 65:
 			goto st292
@@ -5659,7 +5659,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr27:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st319
 	st319:
@@ -5667,7 +5667,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof319
 		}
 	st_case_319:
-//line scanner.go:5674
+		//line scanner.go:5674
 		switch data[p] {
 		case 79:
 			goto st320
@@ -5849,7 +5849,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr28:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st333
 	st333:
@@ -5857,7 +5857,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof333
 		}
 	st_case_333:
-//line scanner.go:5864
+		//line scanner.go:5864
 		switch data[p] {
 		case 79:
 			goto st264
@@ -5866,7 +5866,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr2:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st334
 	st334:
@@ -5874,7 +5874,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof334
 		}
 	st_case_334:
-//line scanner.go:5881
+		//line scanner.go:5881
 		switch data[p] {
 		case 76:
 			goto st335
@@ -6009,11 +6009,11 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr366:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st419
 	tr449:
-//line scanner.rl:75
+		//line scanner.rl:75
 
 		if s.clamp, err = strconv.Atoi(string(data[mark:p])); err != nil {
 			return err
@@ -6025,13 +6025,13 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof419
 		}
 	st_case_419:
-//line scanner.go:6032
+		//line scanner.go:6032
 		if 48 <= data[p] && data[p] <= 57 {
 			goto tr449
 		}
 		goto tr448
 	tr448:
-//line scanner.rl:75
+		//line scanner.rl:75
 
 		if s.clamp, err = strconv.Atoi(string(data[mark:p])); err != nil {
 			return err
@@ -6039,7 +6039,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 
 		goto st420
 	tr451:
-//line scanner.rl:94
+		//line scanner.rl:94
 
 		s.maxExponent, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6048,7 +6048,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 
 		goto st420
 	tr453:
-//line scanner.rl:101
+		//line scanner.rl:101
 
 		s.minExponent, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6057,7 +6057,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 
 		goto st420
 	tr455:
-//line scanner.rl:87
+		//line scanner.rl:87
 
 		s.precision, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6066,7 +6066,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 
 		goto st420
 	tr457:
-//line scanner.rl:108
+		//line scanner.rl:108
 
 		if s.rounding, ok = roundingModes[strings.ToLower(string(data[mark:p]))]; !ok {
 			return fmt.Errorf("unknown rounding mode: %q", data[mark:p])
@@ -6078,10 +6078,10 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof420
 		}
 	st_case_420:
-//line scanner.go:6085
+		//line scanner.go:6085
 		goto st420
 	tr3:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st341
 	st341:
@@ -6089,7 +6089,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof341
 		}
 	st_case_341:
-//line scanner.go:6096
+		//line scanner.go:6096
 		switch data[p] {
 		case 65:
 			goto st342
@@ -6377,7 +6377,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr380:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st354
 	st354:
@@ -6385,17 +6385,17 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof354
 		}
 	st_case_354:
-//line scanner.go:6392
+		//line scanner.go:6392
 		if 48 <= data[p] && data[p] <= 57 {
 			goto st421
 		}
 		goto st0
 	tr381:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st421
 	tr452:
-//line scanner.rl:94
+		//line scanner.rl:94
 
 		s.maxExponent, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6408,7 +6408,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof421
 		}
 	st_case_421:
-//line scanner.go:6415
+		//line scanner.go:6415
 		if 48 <= data[p] && data[p] <= 57 {
 			goto tr452
 		}
@@ -6681,7 +6681,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr394:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st367
 	st367:
@@ -6689,17 +6689,17 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof367
 		}
 	st_case_367:
-//line scanner.go:6696
+		//line scanner.go:6696
 		if 48 <= data[p] && data[p] <= 57 {
 			goto st422
 		}
 		goto st0
 	tr395:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st422
 	tr454:
-//line scanner.rl:101
+		//line scanner.rl:101
 
 		s.minExponent, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6712,13 +6712,13 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof422
 		}
 	st_case_422:
-//line scanner.go:6719
+		//line scanner.go:6719
 		if 48 <= data[p] && data[p] <= 57 {
 			goto tr454
 		}
 		goto tr453
 	tr4:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st368
 	st368:
@@ -6726,7 +6726,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof368
 		}
 	st_case_368:
-//line scanner.go:6733
+		//line scanner.go:6733
 		switch data[p] {
 		case 82:
 			goto st369
@@ -6957,11 +6957,11 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr407:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st423
 	tr456:
-//line scanner.rl:87
+		//line scanner.rl:87
 
 		s.precision, err = strconv.Atoi(string(data[mark:p]))
 		if err != nil {
@@ -6974,13 +6974,13 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof423
 		}
 	st_case_423:
-//line scanner.go:6981
+		//line scanner.go:6981
 		if 48 <= data[p] && data[p] <= 57 {
 			goto tr456
 		}
 		goto tr455
 	tr5:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st379
 	st379:
@@ -6988,7 +6988,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof379
 		}
 	st_case_379:
-//line scanner.go:6995
+		//line scanner.go:6995
 		switch data[p] {
 		case 79:
 			goto st380
@@ -7213,7 +7213,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr417:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st389
 	st389:
@@ -7221,7 +7221,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof389
 		}
 	st_case_389:
-//line scanner.go:7228
+		//line scanner.go:7228
 		if data[p] == 53 {
 			goto st390
 		}
@@ -7239,7 +7239,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr422:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st391
 	st391:
@@ -7247,7 +7247,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof391
 		}
 	st_case_391:
-//line scanner.go:7254
+		//line scanner.go:7254
 		switch data[p] {
 		case 80:
 			goto st424
@@ -7262,7 +7262,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 	st_case_424:
 		goto tr457
 	tr418:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st392
 	st392:
@@ -7270,7 +7270,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof392
 		}
 	st_case_392:
-//line scanner.go:7277
+		//line scanner.go:7277
 		switch data[p] {
 		case 69:
 			goto st393
@@ -7339,7 +7339,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr419:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st398
 	st398:
@@ -7347,7 +7347,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof398
 		}
 	st_case_398:
-//line scanner.go:7354
+		//line scanner.go:7354
 		switch data[p] {
 		case 79:
 			goto st399
@@ -7380,7 +7380,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr420:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st401
 	st401:
@@ -7388,7 +7388,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof401
 		}
 	st_case_401:
-//line scanner.go:7395
+		//line scanner.go:7395
 		switch data[p] {
 		case 76:
 			goto st402
@@ -7433,7 +7433,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 		goto st0
 	tr421:
-//line scanner.rl:69
+		//line scanner.rl:69
 		mark = p
 		goto st405
 	st405:
@@ -7441,7 +7441,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 			goto _test_eof405
 		}
 	st_case_405:
-//line scanner.go:7448
+		//line scanner.go:7448
 		switch data[p] {
 		case 65:
 			goto st406
@@ -8803,14 +8803,14 @@ func (s *Scanner) parse(data []byte) (err error) {
 		if p == eof {
 			switch cs {
 			case 419:
-//line scanner.rl:75
+				//line scanner.rl:75
 
 				if s.clamp, err = strconv.Atoi(string(data[mark:p])); err != nil {
 					return err
 				}
 
 			case 423:
-//line scanner.rl:87
+				//line scanner.rl:87
 
 				s.precision, err = strconv.Atoi(string(data[mark:p]))
 				if err != nil {
@@ -8818,7 +8818,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 				}
 
 			case 421:
-//line scanner.rl:94
+				//line scanner.rl:94
 
 				s.maxExponent, err = strconv.Atoi(string(data[mark:p]))
 				if err != nil {
@@ -8826,7 +8826,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 				}
 
 			case 422:
-//line scanner.rl:101
+				//line scanner.rl:101
 
 				s.minExponent, err = strconv.Atoi(string(data[mark:p]))
 				if err != nil {
@@ -8834,17 +8834,17 @@ func (s *Scanner) parse(data []byte) (err error) {
 				}
 
 			case 424:
-//line scanner.rl:108
+				//line scanner.rl:108
 
 				if s.rounding, ok = roundingModes[strings.ToLower(string(data[mark:p]))]; !ok {
 					return fmt.Errorf("unknown rounding mode: %q", data[mark:p])
 				}
 
 			case 412, 415, 416, 417, 418:
-//line scanner.rl:115
+				//line scanner.rl:115
 				s.c.Output = Data(data[mark:p])
 			case 413:
-//line scanner.rl:116
+				//line scanner.rl:116
 
 				cond, ok = conditions[strings.ToLower(string(data[mark:p]))]
 				if !ok {
@@ -8852,7 +8852,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 				}
 				s.c.Conditions |= cond
 
-//line scanner.go:8011
+				//line scanner.go:8011
 			}
 		}
 
@@ -8861,7 +8861,7 @@ func (s *Scanner) parse(data []byte) (err error) {
 		}
 	}
 
-//line scanner.rl:247
+	//line scanner.rl:247
 
 	return nil
 }

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ericlagergren/decimal/internal/c"
+	"github.com/xenking/fast-decimal/v3/internal/c"
 )
 
 // Precision and scale limits.

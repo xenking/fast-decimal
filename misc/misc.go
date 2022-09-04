@@ -1,10 +1,11 @@
 // Package misc contains miscellaneous decimal routes.
 //
 // Deprecated: the functionality has been moved into the decimal
-//             package itself.
+//
+//	package itself.
 package misc
 
-import "github.com/ericlagergren/decimal"
+import "github.com/xenking/fast-decimal/v3"
 
 const (
 	// Radix is the base in which decimal arithmetic is effected.
@@ -27,22 +28,21 @@ func Canonical(z, x *decimal.Big) *decimal.Big {
 // In particular, this means NaN values have a defined ordering.
 // From lowest to highest the ordering is:
 //
-//    -NaN
-//    -sNaN
-//    -Infinity
-//    -127
-//    -1.00
-//    -1
-//    -0.000
-//    -0
-//    +0
-//    +1.2300
-//    +1.23
-//    +1E+9
-//    +Infinity
-//    +sNaN
-//    +NaN
-//
+//	-NaN
+//	-sNaN
+//	-Infinity
+//	-127
+//	-1.00
+//	-1
+//	-0.000
+//	-0
+//	+0
+//	+1.2300
+//	+1.23
+//	+1E+9
+//	+Infinity
+//	+sNaN
+//	+NaN
 func CmpTotal(x, y *decimal.Big) int {
 	return x.CmpTotal(y)
 }

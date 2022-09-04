@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/ericlagergren/decimal/suite"
+	"github.com/xenking/fast-decimal/v3/suite"
 )
 
 func TestPytables(t *testing.T) {

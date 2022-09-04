@@ -2,23 +2,26 @@
 // and constants.
 //
 // Deprecated: the functionality has been moved into the decimal
-//             package itself.
+//
+//	package itself.
 package math
 
-import "github.com/ericlagergren/decimal"
+import "github.com/xenking/fast-decimal/v3"
 
 // Acos returns the arccosine, in radians, of x.
 //
 // Range:
-//     Input: -1 <= x <= 1
-//     Output: 0 <= Acos(x) <= pi
+//
+//	Input: -1 <= x <= 1
+//	Output: 0 <= Acos(x) <= pi
 //
 // Special cases:
-//     Acos(NaN)  = NaN
-//     Acos(±Inf) = NaN
-//     Acos(x)    = NaN if x < -1 or x > 1
-//     Acos(-1)   = pi
-//     Acos(1)    = 0
+//
+//	Acos(NaN)  = NaN
+//	Acos(±Inf) = NaN
+//	Acos(x)    = NaN if x < -1 or x > 1
+//	Acos(-1)   = pi
+//	Acos(1)    = 0
 func Acos(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Acos(z, x)
 }
@@ -26,14 +29,16 @@ func Acos(z, x *decimal.Big) *decimal.Big {
 // Asin returns the arcsine, in radians, of x.
 //
 // Range:
-//     Input: -1 <= x <= 1
-//     Output: -pi/2 <= Asin(x) <= pi/2
+//
+//	Input: -1 <= x <= 1
+//	Output: -pi/2 <= Asin(x) <= pi/2
 //
 // Special cases:
-//		Asin(NaN)  = NaN
-//		Asin(±Inf) = NaN
-//		Asin(x)    = NaN if x < -1 or x > 1
-//		Asin(±1)   = ±pi/2
+//
+//	Asin(NaN)  = NaN
+//	Asin(±Inf) = NaN
+//	Asin(x)    = NaN if x < -1 or x > 1
+//	Asin(±1)   = ±pi/2
 func Asin(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Asin(z, x)
 }
@@ -41,12 +46,14 @@ func Asin(z, x *decimal.Big) *decimal.Big {
 // Atan returns the arctangent, in radians, of x.
 //
 // Range:
-//     Input: all real numbers
-//     Output: -pi/2 <= Atan(x) <= pi/2
+//
+//	Input: all real numbers
+//	Output: -pi/2 <= Atan(x) <= pi/2
 //
 // Special cases:
-//		Atan(NaN)  = NaN
-//		Atan(±Inf) = ±x * pi/2
+//
+//	Atan(NaN)  = NaN
+//	Atan(±Inf) = ±x * pi/2
 func Atan(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Atan(z, x)
 }
@@ -55,27 +62,29 @@ func Atan(z, x *decimal.Big) *decimal.Big {
 // the valid quadrant
 //
 // Range:
-//     y input: all real numbers
-//     x input: all real numbers
-//     Output: -pi < Atan2(y, x) <= pi
+//
+//	y input: all real numbers
+//	x input: all real numbers
+//	Output: -pi < Atan2(y, x) <= pi
 //
 // Special cases:
-//     Atan2(NaN, NaN)      = NaN
-//     Atan2(y, NaN)        = NaN
-//     Atan2(NaN, x)        = NaN
-//     Atan2(±0, x >=0)     = ±0
-//     Atan2(±0, x <= -0)   = ±pi
-//     Atan2(y > 0, 0)      = +pi/2
-//     Atan2(y < 0, 0)      = -pi/2
-//     Atan2(±Inf, +Inf)    = ±pi/4
-//     Atan2(±Inf, -Inf)    = ±3pi/4
-//     Atan2(y, +Inf)       = 0
-//     Atan2(y > 0, -Inf)   = +pi
-//     Atan2(y < 0, -Inf)   = -pi
-//     Atan2(±Inf, x)       = ±pi/2
-//     Atan2(y, x > 0)      = Atan(y/x)
-//     Atan2(y >= 0, x < 0) = Atan(y/x) + pi
-//     Atan2(y < 0, x < 0)  = Atan(y/x) - pi
+//
+//	Atan2(NaN, NaN)      = NaN
+//	Atan2(y, NaN)        = NaN
+//	Atan2(NaN, x)        = NaN
+//	Atan2(±0, x >=0)     = ±0
+//	Atan2(±0, x <= -0)   = ±pi
+//	Atan2(y > 0, 0)      = +pi/2
+//	Atan2(y < 0, 0)      = -pi/2
+//	Atan2(±Inf, +Inf)    = ±pi/4
+//	Atan2(±Inf, -Inf)    = ±3pi/4
+//	Atan2(y, +Inf)       = 0
+//	Atan2(y > 0, -Inf)   = +pi
+//	Atan2(y < 0, -Inf)   = -pi
+//	Atan2(±Inf, x)       = ±pi/2
+//	Atan2(y, x > 0)      = Atan(y/x)
+//	Atan2(y >= 0, x < 0) = Atan(y/x) + pi
+//	Atan2(y < 0, x < 0)  = Atan(y/x) - pi
 func Atan2(z, y, x *decimal.Big) *decimal.Big {
 	return z.Context.Atan2(z, y, x)
 }
@@ -83,9 +92,9 @@ func Atan2(z, y, x *decimal.Big) *decimal.Big {
 // BinarySplit sets z to the result of the binary splitting formula and returns
 // z. The formula is defined as:
 //
-//         ∞    a(n)p(0) ... p(n)
-//     S = Σ   -------------------
-//         n=0  b(n)q(0) ... q(n)
+//	    ∞    a(n)p(0) ... p(n)
+//	S = Σ   -------------------
+//	    n=0  b(n)q(0) ... q(n)
 //
 // It should only be used when the number of terms is known ahead of time. If
 // start is not in [start, stop) or stop is not in (start, stop], BinarySplit
@@ -110,12 +119,14 @@ func Ceil(z, x *decimal.Big) *decimal.Big {
 // Cos returns the cosine, in radians, of x.
 //
 // Range:
-//     Input: all real numbers
-//     Output: -1 <= Cos(x) <= 1
+//
+//	Input: all real numbers
+//	Output: -1 <= Cos(x) <= 1
 //
 // Special cases:
-//		Cos(NaN)  = NaN
-//		Cos(±Inf) = NaN
+//
+//	Cos(NaN)  = NaN
+//	Cos(±Inf) = NaN
 func Cos(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Cos(z, x)
 }
@@ -146,21 +157,21 @@ func Hypot(z, p, q *decimal.Big) *decimal.Big {
 //
 // The continued fraction should be represented as such:
 //
-//                          a1
-//     f(x) = b0 + --------------------
-//                            a2
-//                 b1 + ---------------
-//                               a3
-//                      b2 + ----------
-//                                 a4
-//                           b3 + -----
-//                                  ...
+//	                     a1
+//	f(x) = b0 + --------------------
+//	                       a2
+//	            b1 + ---------------
+//	                          a3
+//	                 b2 + ----------
+//	                            a4
+//	                      b3 + -----
+//	                             ...
 //
 // Or, equivalently:
 //
-//                  a1   a2   a3
-//     f(x) = b0 + ---- ---- ----
-//                  b1 + b2 + b3 + ···
+//	             a1   a2   a3
+//	f(x) = b0 + ---- ---- ----
+//	             b1 + b2 + b3 + ···
 //
 // If terms need to be subtracted, the a_N terms should be
 // negative. To compute a continued fraction without b_0, divide
@@ -201,12 +212,14 @@ func Pow(z, x, y *decimal.Big) *decimal.Big {
 // Sin returns the sine, in radians, of x.
 //
 // Range:
-//     Input: all real numbers
-//     Output: -1 <= Sin(x) <= 1
+//
+//	Input: all real numbers
+//	Output: -1 <= Sin(x) <= 1
 //
 // Special cases:
-//     Sin(NaN) = NaN
-//     Sin(Inf) = NaN
+//
+//	Sin(NaN) = NaN
+//	Sin(Inf) = NaN
 func Sin(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Sin(z, x)
 }
@@ -219,12 +232,14 @@ func Sqrt(z, x *decimal.Big) *decimal.Big {
 // Tan returns the tangent, in radians, of x.
 //
 // Range:
-//     Input: -pi/2 <= x <= pi/2
-//     Output: all real numbers
+//
+//	Input: -pi/2 <= x <= pi/2
+//	Output: all real numbers
 //
 // Special cases:
-//     Tan(NaN) = NaN
-//     Tan(±Inf) = NaN
+//
+//	Tan(NaN) = NaN
+//	Tan(±Inf) = NaN
 func Tan(z, x *decimal.Big) *decimal.Big {
 	return z.Context.Tan(z, x)
 }

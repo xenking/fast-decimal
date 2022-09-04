@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	. "github.com/ericlagergren/decimal"
+	. "github.com/xenking/fast-decimal/v3"
 )
 
 type Case struct {

@@ -13,8 +13,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ericlagergren/decimal/internal/arith"
-	"github.com/ericlagergren/decimal/internal/c"
+	"github.com/xenking/fast-decimal/v3/internal/arith"
+	"github.com/xenking/fast-decimal/v3/internal/c"
 )
 
 const (
@@ -34,7 +34,7 @@ const (
 // radix. Otherwise, the number is multiplied by 10 to the power
 // of the negation of the scale. More formally,
 //
-//    Big = number × 10**-scale
+//	Big = number × 10**-scale
 //
 // with MinScale <= scale <= MaxScale. A Big may also be ±0,
 // ±Infinity, or ±NaN (either quiet or signaling). Non-NaN Big
@@ -315,17 +315,16 @@ func (z *Big) Add(x, y *Big) *Big {
 
 // Class returns the "class" of x, which is one of the following:
 //
-//    sNaN
-//    NaN
-//    -Infinity
-//    -Normal
-//    -Subnormal
-//    -Zero
-//    +Zero
-//    +Subnormal
-//    +Normal
-//    +Infinity
-//
+//	sNaN
+//	NaN
+//	-Infinity
+//	-Normal
+//	-Subnormal
+//	-Zero
+//	+Zero
+//	+Subnormal
+//	+Normal
+//	+Infinity
 func (x *Big) Class() string {
 	if x.IsNaN(0) {
 		if x.IsNaN(+1) {
@@ -359,9 +358,9 @@ func (x *Big) Class() string {
 
 // Cmp compares x and y and returns:
 //
-//   -1 if x <  y
-//    0 if x == y
-//   +1 if x >  y
+//	-1 if x <  y
+//	 0 if x == y
+//	+1 if x >  y
 //
 // It does not modify x or y. The result is undefined if either
 // x or y are NaN.
@@ -377,9 +376,9 @@ func (x *Big) Cmp(y *Big) int {
 
 // CmpAbs compares |x| and |y| and returns:
 //
-//   -1 if |x| <  |y|
-//    0 if |x| == |y|
-//   +1 if |x| >  |y|
+//	-1 if |x| <  |y|
+//	 0 if |x| == |y|
+//	+1 if |x| >  |y|
 //
 // It does not modify x or y. The result is undefined if either
 // x or y are NaN.
@@ -559,22 +558,21 @@ func cmpabs(x, y *Big) int {
 // In particular, this means NaN values have a defined ordering.
 // From lowest to highest the ordering is:
 //
-//    -NaN
-//    -sNaN
-//    -Infinity
-//    -127
-//    -1.00
-//    -1
-//    -0.000
-//    -0
-//    +0
-//    +1.2300
-//    +1.23
-//    +1E+9
-//    +Infinity
-//    +sNaN
-//    +NaN
-//
+//	-NaN
+//	-sNaN
+//	-Infinity
+//	-127
+//	-1.00
+//	-1
+//	-0.000
+//	-0
+//	+0
+//	+1.2300
+//	+1.23
+//	+1E+9
+//	+Infinity
+//	+sNaN
+//	+NaN
 func (x *Big) CmpTotal(y *Big) int {
 	if debug {
 		x.validate()
@@ -786,13 +784,13 @@ func (x *Big) Float(z *big.Float) *big.Float {
 //
 // The following verbs are supported:
 //
-// 	%s: -dddd.dd or -d.dddd±edd, depending on x
-// 	%d: same as %s
-// 	%v: same as %s
-// 	%e: -d.dddd±edd
-// 	%E: -d.dddd±Edd
-// 	%f: -dddd.dd
-// 	%g: same as %f
+//	%s: -dddd.dd or -d.dddd±edd, depending on x
+//	%d: same as %s
+//	%v: same as %s
+//	%e: -d.dddd±edd
+//	%E: -d.dddd±Edd
+//	%f: -dddd.dd
+//	%g: same as %f
 //
 // While width is honored in the same manner as the fmt package (the minimum
 // width of the formatted number), precision is the number of significant digits
@@ -1232,12 +1230,11 @@ func (z *Big) Neg(x *Big) *Big {
 //
 // For example:
 //
-//    New(1234, 3) // 1.234
-//    New(42, 0)   // 42
-//    New(4321, 5) // 0.04321
-//    New(-1, 0)   // -1
-//    New(3, -10)  // 30 000 000 000
-//
+//	New(1234, 3) // 1.234
+//	New(42, 0)   // 42
+//	New(4321, 5) // 0.04321
+//	New(-1, 0)   // -1
+//	New(3, -10)  // 30 000 000 000
 func New(value int64, scale int) *Big {
 	return new(Big).SetMantScale(value, scale)
 }
@@ -1564,7 +1561,7 @@ func (z *Big) SetFloat64(x float64) *Big {
 	} else {
 		// TODO(eric): figure out why this doesn't work for
 		// _some_ numbers. See
-		// https://github.com/ericlagergren/decimal/issues/89
+		// https://github.com/xenking/fast-decimal/v3/issues/89
 		//
 		// z.compact = mantissa << uint(-shift)
 		// z.precision = arith.Length(z.compact)
@@ -1643,15 +1640,15 @@ var Regexp = regexp.MustCompile(`(?i)(([+-]?(\d+\.\d*|\.?\d+)([eE][+-]?\d+)?)|(i
 //
 // s must have one of the following formats:
 //
-// 	1.234
-// 	1234
-// 	1.234e+5
-// 	1.234E-5
-// 	0.000001234
-// 	Inf
-// 	NaN
-// 	qNaN
-// 	sNaN
+//	1.234
+//	1234
+//	1.234e+5
+//	1.234E-5
+//	0.000001234
+//	Inf
+//	NaN
+//	qNaN
+//	sNaN
 //
 // Each format may be preceded by an optional sign, either "-" or
 // "+". By default, "Inf" and "NaN" map to "+Inf" and "qNaN",
@@ -1702,9 +1699,9 @@ func (z *Big) SetUint64(x uint64) *Big {
 
 // Sign returns:
 //
-//    -1 if x <  0
-//     0 if x == 0
-//    +1 if x >  0
+//	-1 if x <  0
+//	 0 if x == 0
+//	+1 if x >  0
 //
 // No distinction is made between +0 and -0. The result is
 // undefined if x is a NaN value.
@@ -1815,4 +1812,65 @@ func (x *Big) validate() {
 	default:
 		panic(fmt.Sprintf("invalid form %s", x.form))
 	}
+}
+
+func (x *Big) FastString() string {
+	if x.isZero() {
+		return "0"
+	}
+	prec := x.Precision()
+	var b []byte
+	if x.isCompact() {
+		b = formatCompact(x.compact)
+	} else {
+		b = formatUnscaled(&x.unscaled)
+	}
+	exp := x.exp
+	if exp < 0 {
+		j := 0
+		for i := len(b) - 1; i >= 0; i-- {
+			if b[i] > '0' && b[i] <= '9' {
+				break
+			}
+			j += 1
+		}
+		if j > 0 {
+			b = b[:len(b)-j]
+			exp += j
+		}
+	}
+	const zeroRadix = "0."
+
+	f := &strings.Builder{}
+	f.Grow(len(b) + 4)
+	neg := x.Signbit()
+	if neg {
+		f.WriteByte('-')
+	}
+	switch radix := len(b) + exp; {
+	// log10(b) == scale, so immediately before b: 0.123456
+	case radix == 0:
+		f.WriteString(zeroRadix)
+		f.Write(b)
+
+	// log10(b) > scale, so somewhere inside b: 123.456
+	case radix > 0:
+		f.Write(b[:radix])
+		if radix < len(b) {
+			f.WriteByte('.')
+			f.Write(b[radix:])
+		}
+
+	// log10(b) < scale, so before p "0s" and before b: 0.00000123456
+	default:
+		f.WriteString(zeroRadix)
+		io.CopyN(f, zeroReader{}, -int64(radix))
+
+		end := len(b)
+		if prec < end {
+			end = prec
+		}
+		f.Write(b[:end])
+	}
+	return f.String()
 }

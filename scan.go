@@ -5,8 +5,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/ericlagergren/decimal/internal/arith"
-	"github.com/ericlagergren/decimal/internal/c"
+	"github.com/xenking/fast-decimal/v3/internal/arith"
+	"github.com/xenking/fast-decimal/v3/internal/c"
 )
 
 func (z *Big) scan(r io.ByteScanner) error {

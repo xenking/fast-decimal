@@ -1,6 +1,11 @@
-# decimal [![Build Status](https://travis-ci.org/ericlagergren/decimal.png?branch=master)](https://travis-ci.org/ericlagergren/decimal) [![GoDoc](https://godoc.org/github.com/ericlagergren/decimal?status.svg)](https://godoc.org/github.com/ericlagergren/decimal)
+# fast-decimal 
 
-`decimal` implements arbitrary precision, decimal floating-point numbers, per 
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/xenking/fast-decimal)](https://pkg.go.dev/github.com/xenking/fast-decimal)
+[![Go Report Card](https://goreportcard.com/badge/github.com/xenking/fast-decimal)](https://goreportcard.com/report/github.com/xenking/fast-decimal)
+[![Build Status](https://travis-ci.com/xenking/fast-decimal.svg?branch=master)](https://travis-ci.com/xenking/fast-decimal)
+[![codecov](https://codecov.io/gh/xenking/fast-decimal/branch/master/graph/badge.svg)](https://codecov.io/gh/xenking/fast-decimal)
+
+`fast-decimal` implements arbitrary precision, decimal floating-point numbers, per 
 the [General Decimal Arithmetic](http://speleotrove.com/decimal/) specification.
 
 ## Features
@@ -27,18 +32,18 @@ the [General Decimal Arithmetic](http://speleotrove.com/decimal/) specification.
 
 ## Installation
 
-`go get github.com/ericlagergren/decimal`
+`go install github.com/xenking/fast-decimal/v3@latest`
 
 ## Documentation
 
-[GoDoc](http://godoc.org/github.com/ericlagergren/decimal)
+[GoDoc](http://godoc.org/github.com/xenking/fast-decimal)
 
 ## Versioning
 
-`decimal` uses Semantic Versioning. The current version is 3.3.1.
+`decimal` uses Semantic Versioning. The current version is 3.4.1.
 
 `decimal` only explicitly supports the two most recent major Go 1.X versions.
 
 ## License
 
-[BSD 3-clause](https://github.com/ericlagergren/decimal/blob/master/LICENSE)
+[BSD 3-clause](https://github.com/xenking/fast-decimal/blob/master/LICENSE)

@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"testing"
 
-	. "github.com/ericlagergren/decimal"
-	"github.com/ericlagergren/decimal/internal/arith"
+	. "github.com/xenking/fast-decimal/v3"
+	"github.com/xenking/fast-decimal/v3/internal/arith"
 )
 
 func Test(t *testing.T, file string) {
